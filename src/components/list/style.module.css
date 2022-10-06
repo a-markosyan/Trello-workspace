@@ -1,0 +1,60 @@
+.ul{
+    display: flex;
+
+}
+.li{
+    background: #EBECF0;
+    width: 272px;
+    height: 85px;
+    padding: 4px;
+    border-radius: 2px;
+    margin: 0 10px;
+}
+.titleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+.title{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #172B4D;
+}
+.icon{
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+}
+.icon:hover{
+    background: #C8C8C8;
+}
+
+.add{
+    display: flex;
+    align-items: center;
+}
+
+.addListButton{
+    cursor: pointer;
+    color: #5E6C84;
+    font-size: 14px;
+    font-weight: 400;
+    width: 228px;
+    height: 32px;
+    padding: 4px 8px;
+    background: transparent;
+    border-radius: 2px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    /*opacity: .8;*/
+}
+.addListButton:hover{
+    background: #C8C8C8;
+}
