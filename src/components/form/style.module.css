@@ -1,0 +1,40 @@
+.container1{
+    background: #EBECF0;
+    width: 272px;
+    height: 85px;
+    padding: 4px;
+    border-radius: 2px;
+}
+.container2{
+    background: #EBECF0;
+    width: 272px;
+    min-height: 85px;
+    padding: 4px;
+    border-radius: 2px;
+    margin-left: 6px;
+}
+.listInput{
+    width: 264px;
+    height: 40px;
+    padding: 6px 8px;
+    border-radius: 2px;
+    border: 2px solid #0079BF;
+    outline: 0;
+}
+.cardInput{
+    width: 252px;
+    height: 66px;
+    padding: 6px 8px;
+    border-radius: 2px;
+    border: 0;
+    outline: 0;
+    box-shadow: 0 -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+}
+input::placeholder{
+    text-align: start;
+}
+.add{
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+}

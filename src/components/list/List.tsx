@@ -1,29 +1,34 @@
 import React from 'react';
 import css from "./style.module.css"
 import {AiOutlineEllipsis} from "react-icons/ai";
-import AddListButton from "../addListButton/AddListButton";
-import {CgTemplate} from "react-icons/cg";
-import {IList} from "../../models";
+import {FormType, ICard, IList} from "../../models";
+import AddElementForm from "../addElementForm/AddElementForm";
+import Card from "../card/Card";
 
 interface ListProps {
     list: IList
+    cards: ICard[]
+    addCard: (el: ICard) => void
 }
 
-const List = ({list}: ListProps) => {
-
+const  List = ({list, addCard, cards}: ListProps) => {
+    console.log(cards)
     return (
-        <div>
+        <div className={css.container}>
             <ul className={css.ul}>
                 <li key={list.id} className={css.li}>
                     <div className={css.titleContainer}>
                         <h2 className={css.title}>{list.title}</h2>
                         <div className={css.icon}><AiOutlineEllipsis/></div>
                     </div>
+                    {cards.map(card => <Card key={Math.random()} card={card}/>)}
                     <div className={css.add}>
-                        <AddListButton value="Add a card"
-                                       className={css.addListButton}
+                        <AddElementForm<ICard>
+                            formType={FormType.CARD}
+                            value="Add a card..."
+                            className={css.addCardButton}
+                            addElement={addCard}
                         />
-                        <div className={css.icon}><CgTemplate/></div>
                     </div>
                 </li>
             </ul>

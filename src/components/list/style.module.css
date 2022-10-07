@@ -1,12 +1,10 @@
 .ul{
     display: flex;
-
 }
 .li{
     background: #EBECF0;
     width: 272px;
-    height: 85px;
-    padding: 4px;
+    min-height: 85px;
     border-radius: 2px;
     margin: 0 10px;
 }
@@ -14,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5px;
+    padding: 3px 8px;
     margin-bottom: 10px;
 }
 .title{
@@ -40,20 +38,19 @@
     align-items: center;
 }
 
-.addListButton{
+.addCardButton{
     cursor: pointer;
     color: #5E6C84;
     font-size: 14px;
     font-weight: 400;
     width: 228px;
-    height: 32px;
+    height: 66px;
     padding: 4px 8px;
     background: transparent;
     border-radius: 2px;
     border: 0;
     display: flex;
     align-items: center;
-    /*opacity: .8;*/
 }
 .addListButton:hover{
     background: #C8C8C8;

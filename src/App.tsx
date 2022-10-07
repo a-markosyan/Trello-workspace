@@ -1,36 +1,49 @@
 import React, {useState} from 'react';
 import './App.css';
-import AddListButton from "./components/addListButton/AddListButton";
-import AddListForm from "./components/addListForm/AddListForm";
 import List from "./components/list/List";
-import {IList} from "./models";
+import {FormType, ICard, IList} from "./models";
+import AddElementForm from "./components/addElementForm/AddElementForm";
 
 function App() {
-
-    const [show, setShow] = useState(false)
     const [lists, setLists] = useState<IList[]>([
         {
             id: 1,
             title: "To Do",
-            order: 1,
-            // "card": {"list_id": 1, "title": "Js", "order":1}
+            order: 1
         }
     ])
-    console.log(lists)
 
-
+    const [cards, setCards] = useState<ICard[]>([
+        {
+            id: 0,
+            list_id: 1,
+            title: "kkk",
+            order: 1
+        },
+        {
+            id: 1,
+            list_id: 1,
+            title: "lll",
+            order: 2
+        },
+    ])
 
     return (
         <div className="App">
-            {lists.map(list => <List list={list} key={list.id}/>)}
-            <>
-                {
-                    !show ?
-                        <AddListButton value="Add another list" className="btn" onClick={() => setShow(true)}/>
-                        :
-                        <AddListForm setShow={setShow} lists={lists} setLists={setLists}/>
-                }
-            </>
+            {lists.map(list => <List cards={cards.filter(card => card.list_id === list.id)}
+                                     addCard={(card: Omit<ICard, "list_id">) => setCards([...cards, {
+                                         ...card,
+                                         list_id: list.id
+                                     }])}
+                                     list={list}
+                                     key={list.id}
+            />)}
+            <AddElementForm<IList>
+                formType={FormType.LIST}
+                addElement={(el: IList) => setLists([...lists, el])}
+                value="Add another list"
+                className="btn"
+            />
         </div>
     );
 }

@@ -1,15 +1,16 @@
-import css from "./style.module.css"
+import {AiOutlinePlus} from "react-icons/ai";
 
-interface IButton {
-    value: string;
-    onClick: () => void;
-    classname?: string
+interface IButtonProps {
+    className?: string;
+    onClick?: () => void;
+    value?: string;
 }
 
-const AddButton = ({value, onClick, classname} : IButton) => {
+const AddButton = ({className, onClick, value} : IButtonProps) => {
     return (
-        <button value={value} onClick={onClick} className={css.btn}>
-            {value}
+        <button className={className} value={value} onClick={onClick}>
+            <span style={{fontSize:"20px", fontWeight: 900 , paddingRight:"5px"}}><AiOutlinePlus/></span>
+            <span>{value}</span>
         </button>
     );
 };

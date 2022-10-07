@@ -1,5 +1,4 @@
 import React, {ChangeEventHandler} from "react";
-import css from "./style.module.css"
 
 interface IInputProps {
     value: string;
@@ -9,10 +8,10 @@ interface IInputProps {
     placeholder: string
 }
 
-const InputForList = ({value, className, onChange, type, placeholder}: IInputProps) => {
+const Input = ({value, className, onChange, type, placeholder}: IInputProps) => {
     return (
         <input value={value}
-               className={css.input}
+               className={className}
                onChange={onChange}
                type={type}
                placeholder={placeholder}
@@ -20,4 +19,4 @@ const InputForList = ({value, className, onChange, type, placeholder}: IInputPro
     );
 };
 
-export default InputForList;
+export default Input;
